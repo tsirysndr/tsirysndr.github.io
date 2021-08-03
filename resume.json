@@ -1,0 +1,303 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Tsiry Sandratraina",
+    "label": "FullStack JS & Golang Developer",
+    "image": "",
+    "email": "tsiry.sndr@gmail.com",
+    "phone": "034 42 899 31",
+    "url": "https://tsiry-sandratraina.netlify.app/",
+    "summary": "I've been building web applications & mobile applications professionally for over 6 years and I specialize in JavaScript and Golang. Learning something new every day. Product focused, and I see the big picture of how it's more than just software.",
+    "location": {
+      "city": "Antananarivo",
+      "countryCode": "MG",
+      "region": "Analamanga"
+    },
+    "profiles": [
+      {
+        "network": "Twitter",
+        "username": "tsiry_sndr",
+        "url": "https://twitter.com/tsiry_sndr"
+      },
+      {
+        "network": "Github",
+        "username": "tsirysndr",
+        "url": "https://github.com/tsirysndr"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Hairun Technology",
+      "location": "Antananarivo",
+      "description": "Awesome compression company",
+      "position": "Technical Lead",
+      "url": "https://hairun-technology.com",
+      "startDate": "2019-04-01",
+      "endDate": "2021-08",
+      "summary": "",
+      "highlights": [
+        "Lead software development or software engineering teams and troubleshoot technical issues that involve software development, engineering tasks and product releases.",
+        "Managing and integrating SonarQube code Quality tool, manage sonar rules, Quality gates.",
+        "Research and evaluate emerging technology, industry and market trends to assist in project development",
+        "Assist in the analysis, design and development of a roadmap and implementation based upon a current vs. future state in a cohesive architecture viewpoint"
+      ]
+    },
+    {
+      "name": "Paypite",
+      "location": "Antananarivo",
+      "description": "Awesome compression company",
+      "position": "Blockchain Engineer",
+      "url": "https://paypite.org/",
+      "startDate": "2018-09-01",
+      "endDate": "2019-02-01",
+      "summary": "",
+      "highlights": [
+        "Deploying and managing a private Ethereum PoA Network",
+        "Worked on Paypite Block Explorer & Blockchain Wallet (built with React, Redux, Web3 & Drizzle)"
+      ]
+    },
+    {
+      "name": "Telma",
+      "location": "Antananarivo",
+      "description": "Awesome compression company",
+      "position": "React Native Developer",
+      "url": "https://telma.mg",
+      "startDate": "2017-09-01",
+      "endDate": "2018-08-01",
+      "summary": "Telma is a digital operator that offers mobile and internet services in Madagascar.",
+      "highlights": [
+        "Worked with React-native / Redux",
+        "Created Reusable react presentation and container components"
+      ]
+    },
+    {
+      "name": "Orange",
+      "location": "Antananarivo",
+      "description": "Awesome compression company",
+      "position": "Distributed Systems Engineer",
+      "url": "https://www.orange.mg",
+      "startDate": "2015-04-01",
+      "endDate": "2016-04",
+      "summary": "Orange is a digital operator that offers mobile and internet services in Europe and Africa, and corporate telecommunication services.",
+      "highlights": [
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Development Tools",
+      "level": "Master",
+      "keywords": [
+        "React Native",
+        "Fastlane",
+        "React",
+        "Storybook",
+        "Redux",
+        "Gatsby",
+        "Firebase",
+        "Microsoft AppCenter",
+        "Component based UI",
+        "Docker",
+        "NodeJS",
+        "Golang",
+        "Rust",
+        "Elixir",
+        "gRPC",
+        "GraphQL"
+      ]
+    },
+    {
+      "name": "Databases",
+      "level": "Master",
+      "keywords": [
+        "MySQL",
+        "PostgreSQL",
+        "CockroachDB",
+        "MongoDB",
+        "Redis"
+      ]
+    },
+    {
+      "name": "DevOps",
+      "level": "Master",
+      "keywords": [
+        "Kubernetes",
+        "Nomad",
+        "Docker Swarm",
+        "Terraform",
+        "Gitlab CI",
+        "Github Actions"
+      ]
+    },
+    {
+      "name": "Other",
+      "level": "Master",
+      "keywords": [
+        "Blockchain",
+        "Ethereum",
+        "Cosmos SDK",
+        "Parity Substrate",
+        "Edge Computing"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Pluriell",
+      "description": "Pluriell application is dedicated to architects and site manager willing to improve project management and to simplify collaboration.",
+      "highlights": [
+        "Automate every aspect of the app development and release workflow with Fastlane",
+        "Created Reusable react presentation and container components"
+      ],
+      "keywords": [
+        "GoogleMaps",
+        "Chrome Extension",
+        "Javascript"
+      ],
+      "startDate": "2021-01-24",
+      "endDate": "2021-08-24",
+      "url": "https://pluriell.app",
+      "roles": [
+        "Software Engineer"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Livreur Chic",
+      "description": "A food delivery platform that makes getting great food from a favorite local restaurants as easy as requesting a ride.",
+      "highlights": [
+        "Provisioning AWS infrastructure with Terraform",
+        "Automate every aspect of the app development and release workflow with Fastlane",
+        "Managed Docker orchestration and Docker containerization using Nomad",
+        "Created Reusable react presentation and container components"
+      ],
+      "keywords": [
+        "GoogleMaps",
+        "Chrome Extension",
+        "Javascript"
+      ],
+      "startDate": "2021-03-24",
+      "endDate": "2021-08-24",
+      "url": "https://www.livreur-chic.fr",
+      "roles": [
+        "Software Engineer"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Sapheer Bank",
+      "description": "Makes business banking easy, efficient and transparent, leveraging technology, elegant design and world-class customer support",
+      "highlights": [
+        "Provisioning Google Cloud infrastructure with Terraform",
+        "Managed Docker orchestration and Docker containerization using Kubernetes",
+        "Automate every aspect of the app development and release workflow with Fastlane",
+        "Improve caching and performance across applications and CDN (we use Google Cloud CDN)"
+      ],
+      "keywords": [
+        "GoogleMaps",
+        "Chrome Extension",
+        "Javascript"
+      ],
+      "startDate": "2019-04-24",
+      "endDate": "2021-09-24",
+      "url": "http://sapheer.co",
+      "roles": [
+        "Software Engineer",
+        "DevOps"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "SmartPredict",
+      "description": "An automated AI platform, based on AutoML 2.0, for designing AI projects in a simpler and customizable way.",
+      "highlights": [
+        "Provisioning Azure infrastructure with Terraform",
+        "Used Kubernetes to orchestrate the deployment, scaling and management of Docker Containers"
+      ],
+      "startDate": "2019-05-24",
+      "endDate": "2020-11-24",
+      "url": "https://smartpredict.ai",
+      "roles": [
+        "Software Engineer",
+        "DevOps"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Lovel",
+      "description": "Finds people nearby that like each other and connects them if they are both interested.",
+      "highlights": [
+        "Developing a custom camera plugin (inspired by Instagram Camera) using modern technologies such as NativeScript, Vue and Typescript"
+      ],
+      "keywords": [
+        "GoogleMaps",
+        "Chrome Extension",
+        "Javascript"
+      ],
+      "startDate": "2019-09-24",
+      "endDate": "2020-04-24",
+      "url": "https://lovel.app",
+      "roles": [
+        "Software Engineer"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Novéup",
+      "description": "A video conferencing platform",
+      "highlights": [
+        "Using modern technologies such as WebRTC, React Native, React, NodeJS, Twilio and Javascript"
+      ],
+      "keywords": [
+        "GoogleMaps",
+        "Chrome Extension",
+        "Javascript"
+      ],
+      "startDate": "2019-04-24",
+      "endDate": "2020-04-24",
+      "url": "https://www.noveup.fr",
+      "roles": [
+        "Software Engineer"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "SharePlace",
+      "description": "SharePlace is the next gen collaboration platform providing unmatched efficiency and transparency to teamwork.",
+      "highlights": [
+        "Implement documents signing and certification on blockchain"
+      ],
+      "keywords": [
+        "GoogleMaps",
+        "Chrome Extension",
+        "Javascript"
+      ],
+      "startDate": "2019-08-24",
+      "endDate": "2020-08-24",
+      "url": "https://www.shareplace.com",
+      "roles": [
+        "Blockchain Engineer"
+      ],
+      "type": "application"
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Antananarivo",
+      "area": "Mathematics and Informatics",
+      "startDate": "2012-09",
+      "endDate": "2015-03",
+      "courses": [
+        "Algebra",
+        "Analysis",
+        "Numerical Analysis"
+      ]
+    }
+  ],
+  "meta": {
+    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2017-12-24T15:53:00"
+  }
+}

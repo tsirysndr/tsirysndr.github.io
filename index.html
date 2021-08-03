@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Tsiry Sandratraina</title>
+      <meta name="description" content="I&#x27;ve been building web applications &amp;amp; mobile applications professionally for over 6 years and I specialize in JavaScript and Golang. Learning something new every day. Product focused, and I see the big picture of how it&#x27;s more than just software.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap">
+    <style>:root {
+  color-scheme: light dark;
+
+  --color-background: #ffffff;
+  --color-primary: #212529;
+  --color-secondary: #95a5a6;
+  --color-muted: #f4f6f6;
+  --color-accent: #f1c40f;
+  --color-link: #2ecc71;
+
+  --scale-ratio: 1.25;
+  --scale0: 1rem;
+  --scale1: calc(var(--scale0) * var(--scale-ratio));
+  --scale2: calc(var(--scale1) * var(--scale-ratio));
+  --scale3: calc(var(--scale2) * var(--scale-ratio));
+  --scale4: calc(var(--scale3) * var(--scale-ratio));
+  --scale5: calc(var(--scale4) * var(--scale-ratio));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #181a1b;
+    --color-primary: #d1cdc7;
+    --color-secondary: #aaa398;
+    --color-muted: #1e2021;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-primary);
+  display: grid;
+  font: 1em/1.5 Lato, sans-serif;
+  gap: 2em;
+  grid-template-columns:
+    [full-start]
+    1fr
+    [main-start side-start]
+    minmax(min-content, 12em)
+    [side-end content-start]
+    minmax(min-content, 36em)
+    [main-end content-end]
+    1fr
+    [full-end];
+  grid-template-rows: auto [content] 0;
+  margin-bottom: 4em;
+}
+
+body::before {
+  content: '';
+  grid-column: full;
+  grid-row: content;
+}
+
+ol,
+ul {
+  padding-left: 1em;
+}
+
+li + li {
+  margin-top: 0.4em;
+}
+
+li::marker,
+.network {
+  color: var(--color-secondary);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:focus,
+a:hover {
+  color: var(--color-accent);
+}
+
+h1,
+h2,
+h3,
+h5 {
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--scale5);
+}
+
+h2 {
+  color: var(--color-secondary);
+  font-size: var(--scale4);
+}
+
+h3 {
+  color: var(--color-accent);
+  font-size: var(--scale3);
+  grid-column: side;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: var(--scale2);
+}
+
+h5 {
+  font-size: var(--scale1);
+}
+
+h6 {
+  font-size: var(--scale0);
+}
+
+blockquote {
+  border-left: 0.2em solid var(--color-muted);
+  padding-left: 1em;
+}
+
+cite {
+  color: var(--color-secondary);
+  font-style: inherit;
+}
+
+cite::before {
+  content: '— ';
+}
+
+svg {
+  margin-right: 0.2em;
+  vertical-align: -0.2em;
+}
+
+.masthead {
+  background: var(--color-muted);
+  display: inherit;
+  gap: inherit;
+  grid-column: full;
+  grid-template-columns: inherit;
+  padding: 4em 0;
+  text-align: center;
+}
+
+.masthead > *,
+section {
+  grid-column: main;
+}
+
+.masthead > img {
+  border-radius: 50%;
+  margin: 0 auto;
+  max-width: 12em;
+}
+
+article > * + *,
+blockquote > * + * {
+  margin-top: 0.6em;
+}
+
+.stack {
+  display: grid;
+  gap: 1.5em;
+}
+
+.icon-list {
+  list-style: none;
+  padding: 0;
+}
+
+.grid-list {
+  display: grid;
+  gap: 1em;
+}
+
+.spaced-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spaced-list::before {
+  border-bottom: 1px solid var(--color-muted);
+  content: '';
+  flex-grow: 1;
+  margin: 0 1em;
+  order: 1;
+}
+
+.spaced-list > :nth-child(2) {
+  order: 2;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.tag-list > li {
+  background: var(--color-muted);
+  margin: 0 0.2em 0.2em 0;
+  padding: 0.2em 0.6em;
+}
+
+@media print, (min-width: 48em) {
+  h3 {
+    text-align: right;
+    margin-bottom: inherit;
+  }
+
+  .masthead {
+    text-align: inherit;
+  }
+
+  .masthead > *,
+  section {
+    grid-column: content;
+  }
+
+  .masthead img {
+    grid-column: side;
+    grid-row: span 2;
+    max-width: 100%;
+  }
+
+  section {
+    display: contents;
+  }
+
+  .grid-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+  </head>
+  <body>
+      <header class="masthead">
+          <img src="" alt="">
+        <div>
+            <h1>Tsiry Sandratraina</h1>
+            <h2>FullStack JS &amp; Golang Developer</h2>
+        </div>
+          <article>
+            <p>I've been building web applications &amp; mobile applications professionally for over 6 years and I specialize in JavaScript and Golang. Learning something new every day. Product focused, and I see the big picture of how it's more than just software.</p>
+          </article>
+        <ul class="icon-list">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Antananarivo, MG
+              </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:tsiry.sndr@gmail.com">tsiry.sndr@gmail.com</a>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:0344289931">034 42 899 31</a>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+              <a href="https://tsiry-sandratraina.netlify.app/">tsiry-sandratraina.netlify.app</a>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                  <a href="https://twitter.com/tsiry_sndr">tsiry_sndr</a>
+                <span class="network">(Twitter)</span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <a href="https://github.com/tsirysndr">tsirysndr</a>
+                <span class="network">(Github)</span>
+            </li>
+        </ul>
+      </header>
+
+      <section id="work">
+        <h3>Work</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Technical Lead</h4>
+                  <span>
+                    <time datetime="2019-04-01">Apr 2019</time> –
+                    <time datetime="2021-08">Aug 2021</time>
+                  </span>
+                </div>
+                <strong><a href="https://hairun-technology.com">Hairun Technology</a></strong>
+              </header>
+                
+                <ul>
+                    <li>Lead software development or software engineering teams and troubleshoot technical issues that involve software development, engineering tasks and product releases.</li>
+                    <li>Managing and integrating SonarQube code Quality tool, manage sonar rules, Quality gates.</li>
+                    <li>Research and evaluate emerging technology, industry and market trends to assist in project development</li>
+                    <li>Assist in the analysis, design and development of a roadmap and implementation based upon a current vs. future state in a cohesive architecture viewpoint</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Blockchain Engineer</h4>
+                  <span>
+                    <time datetime="2018-09-01">Sep 2018</time> –
+                    <time datetime="2019-02-01">Feb 2019</time>
+                  </span>
+                </div>
+                <strong><a href="https://paypite.org/">Paypite</a></strong>
+              </header>
+                
+                <ul>
+                    <li>Deploying and managing a private Ethereum PoA Network</li>
+                    <li>Worked on Paypite Block Explorer &amp; Blockchain Wallet (built with React, Redux, Web3 &amp; Drizzle)</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>React Native Developer</h4>
+                  <span>
+                    <time datetime="2017-09-01">Sep 2017</time> –
+                    <time datetime="2018-08-01">Aug 2018</time>
+                  </span>
+                </div>
+                <strong><a href="https://telma.mg">Telma</a></strong>
+              </header>
+                <p>Telma is a digital operator that offers mobile and internet services in Madagascar.</p>
+                <ul>
+                    <li>Worked with React-native / Redux</li>
+                    <li>Created Reusable react presentation and container components</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Distributed Systems Engineer</h4>
+                  <span>
+                    <time datetime="2015-04-01">Apr 2015</time> –
+                    <time datetime="2016-04">Apr 2016</time>
+                  </span>
+                </div>
+                <strong><a href="https://www.orange.mg">Orange</a></strong>
+              </header>
+                <p>Orange is a digital operator that offers mobile and internet services in Europe and Africa, and corporate telecommunication services.</p>
+            </article>
+        </div>
+      </section>
+      <section id="education">
+        <h3>Education</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>University of Antananarivo</h4>
+                  <span>
+                    <time datetime="2012-09">Sep 2012</time> –
+                    <time datetime="2015-03">Mar 2015</time>
+                  </span>
+                </div>
+                  <strong>Mathematics and Informatics</strong>
+              </header>
+                <h5>Courses</h5>
+                <ul>
+                    <li>Algebra</li>
+                    <li>Analysis</li>
+                    <li>Numerical Analysis</li>
+                </ul>
+            </article>
+        </div>
+      </section>
+      <section id="projects">
+        <h3>Projects</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4><a href="https://pluriell.app">Pluriell</a></h4>
+                  <span>
+                    <time datetime="2021-01-24">Jan 2021</time> –
+                    <time datetime="2021-08-24">Aug 2021</time>
+                  </span>
+                </div>
+                <span>
+                    <strong>Software Engineer</strong>
+                </span>
+              </header>
+                <p>Pluriell application is dedicated to architects and site manager willing to improve project management and to simplify collaboration.</p>
+                <ul>
+                    <li>Automate every aspect of the app development and release workflow with Fastlane</li>
+                    <li>Created Reusable react presentation and container components</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4><a href="https://www.livreur-chic.fr">Livreur Chic</a></h4>
+                  <span>
+                    <time datetime="2021-03-24">Mar 2021</time> –
+                    <time datetime="2021-08-24">Aug 2021</time>
+                  </span>
+                </div>
+                <span>
+                    <strong>Software Engineer</strong>
+                </span>
+              </header>
+                <p>A food delivery platform that makes getting great food from a favorite local restaurants as easy as requesting a ride.</p>
+                <ul>
+                    <li>Provisioning AWS infrastructure with Terraform</li>
+                    <li>Automate every aspect of the app development and release workflow with Fastlane</li>
+                    <li>Managed Docker orchestration and Docker containerization using Nomad</li>
+                    <li>Created Reusable react presentation and container components</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4><a href="http://sapheer.co">Sapheer Bank</a></h4>
+                  <span>
+                    <time datetime="2019-04-24">Apr 2019</time> –
+                    <time datetime="2021-09-24">Sep 2021</time>
+                  </span>
+                </div>
+                <span>
+                    <strong>Software Engineer, DevOps</strong>
+                </span>
+              </header>
+                <p>Makes business banking easy, efficient and transparent, leveraging technology, elegant design and world-class customer support</p>
+                <ul>
+                    <li>Provisioning Google Cloud infrastructure with Terraform</li>
+                    <li>Managed Docker orchestration and Docker containerization using Kubernetes</li>
+                    <li>Automate every aspect of the app development and release workflow with Fastlane</li>
+                    <li>Improve caching and performance across applications and CDN (we use Google Cloud CDN)</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4><a href="https://smartpredict.ai">SmartPredict</a></h4>
+                  <span>
+                    <time datetime="2019-05-24">May 2019</time> –
+                    <time datetime="2020-11-24">Nov 2020</time>
+                  </span>
+                </div>
+                <span>
+                    <strong>Software Engineer, DevOps</strong>
+                </span>
+              </header>
+                <p>An automated AI platform, based on AutoML 2.0, for designing AI projects in a simpler and customizable way.</p>
+                <ul>
+                    <li>Provisioning Azure infrastructure with Terraform</li>
+                    <li>Used Kubernetes to orchestrate the deployment, scaling and management of Docker Containers</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4><a href="https://lovel.app">Lovel</a></h4>
+                  <span>
+                    <time datetime="2019-09-24">Sep 2019</time> –
+                    <time datetime="2020-04-24">Apr 2020</time>
+                  </span>
+                </div>
+                <span>
+                    <strong>Software Engineer</strong>
+                </span>
+              </header>
+                <p>Finds people nearby that like each other and connects them if they are both interested.</p>
+                <ul>
+                    <li>Developing a custom camera plugin (inspired by Instagram Camera) using modern technologies such as NativeScript, Vue and Typescript</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4><a href="https://www.noveup.fr">Novéup</a></h4>
+                  <span>
+                    <time datetime="2019-04-24">Apr 2019</time> –
+                    <time datetime="2020-04-24">Apr 2020</time>
+                  </span>
+                </div>
+                <span>
+                    <strong>Software Engineer</strong>
+                </span>
+              </header>
+                <p>A video conferencing platform</p>
+                <ul>
+                    <li>Using modern technologies such as WebRTC, React Native, React, NodeJS, Twilio and Javascript</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4><a href="https://www.shareplace.com">SharePlace</a></h4>
+                  <span>
+                    <time datetime="2019-08-24">Aug 2019</time> –
+                    <time datetime="2020-08-24">Aug 2020</time>
+                  </span>
+                </div>
+                <span>
+                    <strong>Blockchain Engineer</strong>
+                </span>
+              </header>
+                <p>SharePlace is the next gen collaboration platform providing unmatched efficiency and transparency to teamwork.</p>
+                <ul>
+                    <li>Implement documents signing and certification on blockchain</li>
+                </ul>
+            </article>
+        </div>
+      </section>
+      <section id="skills">
+        <h3>Skills</h3>
+        <div class="grid-list">
+            <div>
+                <h4>Development Tools</h4>
+                <ul class="tag-list">
+                    <li>React Native</li>
+                    <li>Fastlane</li>
+                    <li>React</li>
+                    <li>Storybook</li>
+                    <li>Redux</li>
+                    <li>Gatsby</li>
+                    <li>Firebase</li>
+                    <li>Microsoft AppCenter</li>
+                    <li>Component based UI</li>
+                    <li>Docker</li>
+                    <li>NodeJS</li>
+                    <li>Golang</li>
+                    <li>Rust</li>
+                    <li>Elixir</li>
+                    <li>gRPC</li>
+                    <li>GraphQL</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Databases</h4>
+                <ul class="tag-list">
+                    <li>MySQL</li>
+                    <li>PostgreSQL</li>
+                    <li>CockroachDB</li>
+                    <li>MongoDB</li>
+                    <li>Redis</li>
+                </ul>
+            </div>
+            <div>
+                <h4>DevOps</h4>
+                <ul class="tag-list">
+                    <li>Kubernetes</li>
+                    <li>Nomad</li>
+                    <li>Docker Swarm</li>
+                    <li>Terraform</li>
+                    <li>Gitlab CI</li>
+                    <li>Github Actions</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Other</h4>
+                <ul class="tag-list">
+                    <li>Blockchain</li>
+                    <li>Ethereum</li>
+                    <li>Cosmos SDK</li>
+                    <li>Parity Substrate</li>
+                    <li>Edge Computing</li>
+                </ul>
+            </div>
+        </div>
+      </section>
+  </body>
+</html>
